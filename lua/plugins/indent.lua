@@ -1,9 +1,7 @@
 return {
-  "lukas-reineke/indent-blankline.nvim",
-  opts = {
-    char = "│",    
-    show_trailing_blankline_indent = false,   
-    show_first_indent_level = false,   
-    use_treesitter = true, 
-  }
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    ---@module "ibl"
+    ---@type ibl.config
+    opts = {},
 }
