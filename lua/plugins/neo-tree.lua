@@ -15,13 +15,14 @@ return {
         width = 30,
       },
       filesystem = {
-        follow_current_file = true,
+        follow_current_file = {
+          enabled = true,
+        },
         window = {
           indent_width = 2,
-          indent_markers = true
+          indent_markers = true,
         },
       },
     })
-  end
+  end,
 }
-
