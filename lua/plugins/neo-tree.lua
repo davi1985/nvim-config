@@ -3,7 +3,7 @@ return {
   branch = "v3.x",
   dependencies = {
     "nvim-lua/plenary.nvim",
-    "nvim-tree/nvim-web-devicons", 
+    "nvim-tree/nvim-web-devicons",
     "MunifTanjim/nui.nvim",
   },
   config = function()
@@ -11,12 +11,12 @@ return {
 
     require("neo-tree").setup({
       window = {
-        position = "right", 
-        width = 30,        
+        position = "right",
+        width = 30,
       },
       filesystem = {
         window = {
-          indent_width = 2, 
+          indent_width = 2,
           indent_markers = true
         },
       },
