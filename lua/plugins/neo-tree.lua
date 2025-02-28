@@ -15,6 +15,7 @@ return {
         width = 30,
       },
       filesystem = {
+        follow_current_file = true,
         window = {
           indent_width = 2,
           indent_markers = true
