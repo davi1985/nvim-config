@@ -6,7 +6,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   if vim.v.shell_error ~= 0 then
     vim.api.nvim_echo({
       { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out, "WarningMsg" },
+      { out,                            "WarningMsg" },
       { "\nPress any key to exit..." },
     }, true, {})
     vim.fn.getchar()
@@ -21,8 +21,13 @@ vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 vim.g.mapleader = " "
-vim.opt.mouse="a"
+vim.opt.mouse = "a"
 vim.opt.clipboard = "unnamedplus"
+
+vim.diagnostic.config({
+  update_in_insert = true,
+  debounce = 150,
+})
 
 -- Setup lazy.nvim
 require("lazy").setup("plugins")
