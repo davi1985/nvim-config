@@ -16,18 +16,71 @@ return {
   {
     "neovim/nvim-lspconfig",
     config = function()
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
       local lspconfig = require("lspconfig")
-      lspconfig.lua_ls.setup({
-        capabilities = capabilities,
-      })
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
       lspconfig.ts_ls.setup({
         capabilities = capabilities,
+        on_attach = function(client, bufnr)
+          require("inlay-hints").on_attach(client, bufnr)
+        end,
+        settings = {
+          typescript = {
+            inlayHints = {
+              includeInlayParameterNameHints = "all",
+              includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+              includeInlayFunctionParameterTypeHints = true,
+              includeInlayVariableTypeHints = false,
+              includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+              includeInlayPropertyDeclarationTypeHints = true,
+              includeInlayFunctionLikeReturnTypeHints = true,
+              includeInlayEnumMemberValueHints = false,
+            },
+          },
+          javascript = {
+            inlayHints = {
+              includeInlayParameterNameHints = "all",
+              includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+              includeInlayFunctionParameterTypeHints = false,
+              includeInlayVariableTypeHints = false,
+              includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+              includeInlayPropertyDeclarationTypeHints = true,
+              includeInlayFunctionLikeReturnTypeHints = true,
+              includeInlayEnumMemberValueHints = false,
+            },
+          },
+        },
+      })
+
+      lspconfig.lua_ls.setup({
+        capabilities = capabilities,
+        on_attach = function(client, bufnr)
+          require("inlay-hints").on_attach(client, bufnr)
+        end,
+
+        settings = {
+          Lua = {
+            hint = {
+              enable = true, -- necessary
+            },
+          },
+        },
       })
 
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
       vim.keymap.set({ "n", "v" }, "<C-.>", vim.lsp.buf.code_action, {})
+
+      if vim.lsp.inlay_hint then
+        vim.api.nvim_create_autocmd("LspAttach", {
+          callback = function(args)
+            local client = vim.lsp.get_client_by_id(args.data.client_id)
+            if client and client.server_capabilities.inlayHintProvider then
+              vim.lsp.inlay_hint.enable(true, { bufnr = args.buf })
+            end
+          end,
+        })
+      end
     end,
   },
 }
