@@ -14,6 +14,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   end
 end
 
+vim.cmd([[ set guicursor= ]])
 vim.opt.rtp:prepend(lazypath)
 vim.cmd("set relativenumber")
 vim.cmd("set expandtab")
