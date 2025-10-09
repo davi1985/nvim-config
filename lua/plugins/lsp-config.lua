@@ -9,7 +9,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "ts_ls", "tailwindcss" },
+        ensure_installed = { "lua_ls", "ts_ls", "tailwindcss", "gopls" },
       })
     end,
   },
@@ -23,6 +23,10 @@ return {
         capabilities = capabilities,
       })
 
+      lspconfig.gopls.setup({
+        capabilities = capabilities,
+      })
+
       lspconfig.ts_ls.setup({
         capabilities = capabilities,
         on_attach = function(client, bufnr)
@@ -31,26 +35,26 @@ return {
         settings = {
           typescript = {
             inlayHints = {
-              includeInlayParameterNameHints = "all",
-              includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-              includeInlayFunctionParameterTypeHints = true,
-              includeInlayVariableTypeHints = false,
-              includeInlayVariableTypeHintsWhenTypeMatchesName = false,
-              includeInlayPropertyDeclarationTypeHints = true,
-              includeInlayFunctionLikeReturnTypeHints = true,
-              includeInlayEnumMemberValueHints = false,
+              -- includeInlayParameterNameHints = "none",
+              -- includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+              -- includeInlayFunctionParameterTypeHints = true,
+              -- includeInlayVariableTypeHints = false,
+              -- includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+              -- includeInlayPropertyDeclarationTypeHints = false,
+              -- includeInlayFunctionLikeReturnTypeHints = true,
+              -- includeInlayEnumMemberValueHints = false,
             },
           },
           javascript = {
             inlayHints = {
-              includeInlayParameterNameHints = "all",
-              includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-              includeInlayFunctionParameterTypeHints = false,
-              includeInlayVariableTypeHints = false,
-              includeInlayVariableTypeHintsWhenTypeMatchesName = false,
-              includeInlayPropertyDeclarationTypeHints = true,
-              includeInlayFunctionLikeReturnTypeHints = true,
-              includeInlayEnumMemberValueHints = false,
+              -- includeInlayParameterNameHints = "all",
+              -- includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+              -- includeInlayFunctionParameterTypeHints = false,
+              -- includeInlayVariableTypeHints = false,
+              -- includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+              -- includeInlayPropertyDeclarationTypeHints = true,
+              -- includeInlayFunctionLikeReturnTypeHints = true,
+              -- includeInlayEnumMemberValueHints = false,
             },
           },
         },

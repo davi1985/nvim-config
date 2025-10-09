@@ -6,6 +6,7 @@ return {
     null_ls.setup({
       sources = {
         null_ls.builtins.formatting.prettier.with({
+          prefer_local = "node_modules/.bin",
           filetypes = {
             "javascript",
             "javascriptreact",
@@ -28,8 +29,14 @@ return {
 
     vim.api.nvim_create_autocmd("BufWritePre", {
       pattern = "*",
-      callback = function()
-        vim.lsp.buf.format()
+      callback = function(args)
+        -- Use only null-ls for formatting to avoid conflicts with other LSPs
+        vim.lsp.buf.format({
+          bufnr = args.buf,
+          filter = function(client)
+            return client.name == "null-ls"
+          end,
+        })
       end,
     })
   end,
