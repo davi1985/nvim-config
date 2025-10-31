@@ -37,7 +37,7 @@ return {
             inlayHints = {
               -- includeInlayParameterNameHints = "none",
               -- includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-              -- includeInlayFunctionParameterTypeHints = true,
+              includeInlayFunctionParameterTypeHints = true,
               -- includeInlayVariableTypeHints = false,
               -- includeInlayVariableTypeHintsWhenTypeMatchesName = false,
               -- includeInlayPropertyDeclarationTypeHints = false,

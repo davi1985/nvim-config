@@ -35,5 +35,9 @@ vim.opt.mouse = "a"
 vim.opt.wrap = true
 vim.opt.clipboard = "unnamedplus"
 
+-- Map jj to Escape in insert mode
+vim.api.nvim_set_keymap('i', 'jj', '<Esc>', { noremap = true, silent = true })
+
 -- Setup lazy.nvim
 require("lazy").setup("plugins")
+vim.cmd("colorscheme nord")
