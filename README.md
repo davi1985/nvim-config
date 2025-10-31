@@ -2,9 +2,9 @@
 
 My personal Neovim configuration with lazy.nvim, focused on web development and productivity.
 
-## 🚀 Features
+## Features
 
-### 🎨 Visual Interface
+### Visual Interface
 
 - **Nord Theme**: Dark and pleasant colors
 - **Alpha-nvim**: Custom welcome screen
@@ -13,7 +13,7 @@ My personal Neovim configuration with lazy.nvim, focused on web development and 
 - **Relative Numbers**: Relative line numbering
 - **Mouse Support**: Full mouse support
 
-### 🔍 Navigation and Search
+### Navigation and Search
 
 - **Telescope**: File and text search
 - **Neo-tree**: Side file explorer (right side)
@@ -31,14 +31,14 @@ My personal Neovim configuration with lazy.nvim, focused on web development and 
 - **GitHub Copilot**: AI code assistant
 - **None-ls**: Formatting and linting
 
-### ⚙️ Settings
+### Settings
 
 - **Indentation**: 2 spaces, expandtab
 - **Clipboard**: System clipboard integration
 - **Leader Key**: Space (`<Space>`)
 - **Wrap**: Line wrap enabled
 
-## ⌨️ Keybindings
+## Keybindings
 
 ### Navigation
 
@@ -52,7 +52,7 @@ My personal Neovim configuration with lazy.nvim, focused on web development and 
 - `gd` - Go to definition
 - `<C-.>` - Show code actions
 
-### Autocompletions
+### Autocomplete
 
 - `<C-Space>` - Complete code
 - `<C-b>` - Scroll documentation up
@@ -76,7 +76,7 @@ My personal Neovim configuration with lazy.nvim, focused on web development and 
 - `:Mason` - Manage LSP servers
 - `:Lazy` - Manage plugins
 
-## 📦 Main Plugins
+## Main Plugins
 
 ### Management
 
@@ -105,7 +105,7 @@ My personal Neovim configuration with lazy.nvim, focused on web development and 
 - `nvim-web-devicons` - File icons
 - `vim-vsnip` - Snippets
 
-## 🛠️ Installation
+## Installation
 
 1. Clone the repository:
 
@@ -124,7 +124,7 @@ My personal Neovim configuration with lazy.nvim, focused on web development and 
    :Copilot auth
    ```
 
-## 🎯 Supported Languages
+## Supported Languages
 
 - **TypeScript/JavaScript** - Completions, formatting, inlay hints
 - **Lua** - Completions, formatting, inlay hints
@@ -134,7 +134,7 @@ My personal Neovim configuration with lazy.nvim, focused on web development and 
 - **JSON/YAML** - Syntax highlighting
 - And many more via Treesitter
 
-## 📝 Notes
+## Notes
 
 - Configuration optimized for web development
 - Focus on productivity and user experience
