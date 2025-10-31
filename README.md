@@ -19,7 +19,7 @@ My personal Neovim configuration with lazy.nvim, focused on web development and 
 - **Neo-tree**: Side file explorer (right side)
 - **Inlay Hints**: Inline type hints for TypeScript and Lua
 
-### 💻 Development
+### Development
 
 - **LSP (Language Server Protocol)**: Full support for:
   - TypeScript/JavaScript (`ts_ls`)
