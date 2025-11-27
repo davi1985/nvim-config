@@ -35,14 +35,14 @@ return {
         settings = {
           typescript = {
             inlayHints = {
-              -- includeInlayParameterNameHints = "none",
-              -- includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+              includeInlayParameterNameHints = "all",
+              includeInlayParameterNameHintsWhenArgumentMatchesName = false,
               includeInlayFunctionParameterTypeHints = true,
-              -- includeInlayVariableTypeHints = false,
-              -- includeInlayVariableTypeHintsWhenTypeMatchesName = false,
-              -- includeInlayPropertyDeclarationTypeHints = false,
-              -- includeInlayFunctionLikeReturnTypeHints = true,
-              -- includeInlayEnumMemberValueHints = false,
+              includeInlayVariableTypeHints = true,
+              includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+              includeInlayPropertyDeclarationTypeHints = true,
+              includeInlayFunctionLikeReturnTypeHints = true,
+              includeInlayEnumMemberValueHints = true,
             },
           },
           javascript = {
