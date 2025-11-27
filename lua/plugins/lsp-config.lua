@@ -9,7 +9,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "ts_ls", "tailwindcss", "gopls", "eslint", "styled_components" },
+        ensure_installed = { "lua_ls", "ts_ls", "tailwindcss", "gopls", "eslint" },
       })
     end,
   },
@@ -37,11 +37,6 @@ return {
       lspconfig.gopls.setup({
         capabilities = capabilities,
       })
-
-       lspconfig.emmet_language_server.setup({
-         capabilities = capabilities,
-         filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "typescript", "typescriptreact" },
-       })
 
       lspconfig.eslint.setup({
         capabilities = capabilities,
