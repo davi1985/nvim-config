@@ -40,4 +40,4 @@ vim.api.nvim_set_keymap('i', 'jj', '<Esc>', { noremap = true, silent = true })
 
 -- Setup lazy.nvim
 require("lazy").setup("plugins")
-vim.cmd("colorscheme nord")
+-- vim.cmd("colorscheme nord")
