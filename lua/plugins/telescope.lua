@@ -12,6 +12,13 @@ return {
 						exclude = { 2, -1 },
 					},
 				},
+				file_ignore_patterns = {
+					"node_modules",
+					".git",
+					"target",
+					"build",
+					"dist",
+				},
 			},
 		},
 		config = function()
