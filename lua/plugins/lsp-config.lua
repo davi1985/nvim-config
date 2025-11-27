@@ -38,8 +38,9 @@ return {
         capabilities = capabilities,
       })
 
-       lspconfig.styled_components.setup({
+       lspconfig.emmet_language_server.setup({
          capabilities = capabilities,
+         filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "typescript", "typescriptreact" },
        })
 
       lspconfig.eslint.setup({
