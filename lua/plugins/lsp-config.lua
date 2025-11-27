@@ -9,7 +9,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "ts_ls", "tailwindcss", "gopls" },
+        ensure_installed = { "lua_ls", "ts_ls", "tailwindcss", "gopls", "eslint", "styled_components" },
       })
     end,
   },
@@ -21,10 +21,46 @@ return {
 
       lspconfig.tailwindcss.setup({
         capabilities = capabilities,
+        settings = {
+          tailwindCSS = {
+            includeLanguages = {
+              typescript = "javascript",
+              typescriptreact = "javascript",
+              javascriptreact = "javascript",
+            },
+            experimental = {
+            },
+          },
+        },
       })
 
       lspconfig.gopls.setup({
         capabilities = capabilities,
+      })
+
+       lspconfig.styled_components.setup({
+         capabilities = capabilities,
+       })
+
+      lspconfig.eslint.setup({
+        capabilities = capabilities,
+        on_attach = function(client, bufnr)
+          vim.api.nvim_create_autocmd("BufWritePre", {
+            buffer = bufnr,
+            command = "EslintFixAll",
+          })
+        end,
+        settings = {
+          codeAction = {
+            disableRuleComment = {
+              enable = true,
+              location = "separateLine",
+            },
+            showDocumentation = {
+              enable = true,
+            },
+          },
+        },
       })
 
       lspconfig.ts_ls.setup({
